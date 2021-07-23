@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 long long int N=1000001;
 long long int seive[1000001];
@@ -16,12 +16,9 @@ void gen_seive()
             for(int j=i*i;j<=N;j+=i)
             {
                 seive[j]=0;
-            }
-            
+            } 
         }
-        
-    }
-    
+    } 
 }
 int main()
 {
