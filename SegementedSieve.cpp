@@ -34,7 +34,7 @@ int main()
     int l,r;
     cin>>l>>r;
     vector<int>dj=gen_Primes(sqrt(r)+1);
-    vector<int>dummy(r-l+1);
+    vector<int>dummy(r-l+1,1);
     
     for(auto it: dj){
       int firstmul=0;
