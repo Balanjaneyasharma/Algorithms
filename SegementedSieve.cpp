@@ -1,34 +1,37 @@
 #include<bits/stdc++.h>
-usng namespace std;
+using namespace std;
+int N =1000001;
+int sieve[1000001];
 void gen_seive()
 {
-  seive[0]=seive[1]=0;
+  sieve[0]=sieve[1]=0;
   for(int i=2;i<=N;i++)
   {
-    seive[i]=1;
+    sieve[i]=1;
   }
   for(int i=2;i*i<=N;i++)
   {
-    if(seive[i]==1)
+    if(sieve[i]==1)
     {
       for(int j=i*i;j<=N;j+=i)
       {
-        seive[j]=0;
+        sieve[j]=0;
       }
     }
   }
 }
 vector<int> gen_Primes(int num)
 {
+  gen_seive();
   vector<int>ds;
   for(int i=2;i<=num;i++){
-    if(seive[i]==1) ds.push_back(i);
+    if(sieve[i]==1) ds.push_back(i);
   }
   return ds;
 }
 int main()
 {
-  gen_Seive();
+  gen_seive();
   int T;
   while(T--){
     int l,r;
